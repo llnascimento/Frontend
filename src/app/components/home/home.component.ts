@@ -9,21 +9,24 @@ export class HomeComponent implements OnInit {
   // public não é necessariio
   public nomeProduto: string = 'Curso de Angular';
   anuncio: string = `O ${this.nomeProduto} está em promoção `;
-  idProduto: number = 123;
-  precoProduto: number = 1.25;
+  idProduto: number = 3;
+  precoProduto: number = 2.51;
   promocao: boolean = true;
+  foto:string='assets/img/crud.png'
+  datavalidade = '2021-12-31'
 
 
   constructor() {
     //this.anunciio = 'O' + this.nomeProduto + 'está em promoção';
+    /*
     console.log('Nome do Produto: ', this.nomeProduto);
     console.log('Anuncio: ', this.anuncio);
     console.log('id ', this.idProduto);
     console.log('preço ', this.precoProduto);
     console.log('promoção ', this.promocao);
-    var variavel1;
-    let variavel2;
-    const variavel3: number = 10;
+    //var variavel1;
+    //let variavel2;
+    //const variavel3: number = 10;
     //var idade = 15;
     //console.log('Minha idade é', idade);
 
@@ -89,7 +92,8 @@ function funcao(){
 funcao();
 */
 
-// Exercicio 3 
+// Exercicio 3
+
   }
   ngOnInit(): void {
   }
