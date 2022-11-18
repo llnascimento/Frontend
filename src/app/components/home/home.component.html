@@ -1,21 +1,39 @@
 <h1>Seja bem vindo ao curso de Angular!</h1>
 <h4 class="text-danger">{{ anuncio }}</h4>
-<div class="card" style="width: 18rem">
-  <img [src]="foto" class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{{ nomeProduto | uppercase}}
-      <span *ngIf="promocao == true; else elseBlock" class="badge badge-success">Promoção</span>
-      <ng-template #elseBlock>
-        <span class="badge badge-primary"> Aproveite</span>
-      </ng-template>
-    </h5>
-    <p class="card-text"> Identificação: {{idProduto | number:'2.0-0'}}
-      <br>
-      Validade {{datavalidade | date : 'shortDate'}}
-    </p>
-    <a href="#" class="btn btn-primary float-right">{{precoProduto | currency: 'BRL'}}</a>
+<div class="row">
+  <div class="col">
+    <app-card-produto
+    [foto]="foto"
+    [nomeProduto]="nomeProduto"
+    [promocao]="promocao"
+    [idProduto]="idProduto"
+    [datavalidade]="datavalidade"
+    [precoProduto]="precoProduto"
+    ></app-card-produto>
+  </div>
+  <div class="col">
+    <app-card-produto
+    foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUKPMl78W0yyVfCHkRRwV5udGsKG8ijcpRKE5ZYBqb&s"
+    nomeProduto="Viagem para a Grecia"
+    [promocao]="true"
+    [idProduto]="10"
+    datavalidade="2022-12-30"
+    [precoProduto]="7000.50"
+    ></app-card-produto>
+  </div>
+  <div class="col">
+    <app-card-produto
+    foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUKPMl78W0yyVfCHkRRwV5udGsKG8ijcpRKE5ZYBqb&s"
+    nomeProduto="Viagem para Budapeste"
+    [promocao]="false"
+    [idProduto]="11"
+    datavalidade="2022-12-30"
+    [precoProduto]="5000.50"
+    ></app-card-produto>
   </div>
 </div>
+
+
 
 <!-- <div class="row">
   <div class="col">
