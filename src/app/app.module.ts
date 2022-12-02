@@ -16,6 +16,11 @@ import { registerLocaleData } from '@angular/common' ;
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 registerLocaleData(localePt);
 
 
@@ -26,14 +31,19 @@ registerLocaleData(localePt);
     FooterComponent,
     HomeComponent,
     ListarProdutosComponent,
-    CadastrarProdutosComponent
+    CadastrarProdutosComponent,
+    AtualizarProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule addedtModule,
+    SweetAlert2Module.forRoot()
+  
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
